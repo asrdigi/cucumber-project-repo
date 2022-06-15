@@ -4,6 +4,9 @@ import org.junit.jupiter.api.*;
 
 import java.time.LocalDate;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
 @Tag("Person POJO Test")
 class PersonTest {
     private Person person;

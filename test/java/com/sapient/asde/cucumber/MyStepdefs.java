@@ -25,18 +25,18 @@ public class MyStepdefs {
     @Given("I have {int} beer cans")
     public void i_have_beer_cans(Integer int1) {
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+//        throw new io.cucumber.java.PendingException();
     }
 
     @Given("I have drunk {int} beer cans")
     public void i_have_drunk_beer_cans(Integer int1) {
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+//        throw new io.cucumber.java.PendingException();
     }
 
     @Then("I should have {int} beer cans")
     public void i_should_have_beer_cans(Integer int1) {
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+//        throw new io.cucumber.java.PendingException();
     }
 }
