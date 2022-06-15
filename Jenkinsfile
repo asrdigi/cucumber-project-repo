@@ -31,7 +31,8 @@ pipeline {
 
     stage('Generate Cucumber report') {
                     steps{
-                			cucumber buildStatus: 'null' failedFeaturesNumber: -1,
+                			cucumber buildStatus: 'null',
+                			failedFeaturesNumber: -1,
                 			failedScenariosNumber: -1,
                 			 failedStepsNumber: -1,
                 			 fileIncludePattern: 'target/cucumber.json',
