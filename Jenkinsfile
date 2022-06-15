@@ -22,7 +22,16 @@ pipeline {
 		}
 	}
 
-       stage('SonarQube'){
+    stage('Generate Cucumber report') {
+                    steps{
+                			cucumber buildStatus: 'UNSTABLE',
+                        		reportTitle: 'BeerCans Cucumber Report',
+                        		fileIncludePattern: '**/cucumber.json',
+                       			jsonReportDirectory: 'target'
+                          }
+    }
+
+    stage('SonarQube'){
 		steps{
 				bat label: '', script: '''mvn sonar:sonar \
 				-Dsonar.host.url=http://localhost:9000 \
@@ -37,20 +46,20 @@ pipeline {
 		}
 	}
 
-    stage('Generate Cucumber report') {
-                steps{
-            			cucumber buildStatus: 'UNSTABLE',
-                    		reportTitle: 'BeerCans Cucumber Report',
-                    		fileIncludePattern: '**/*.json',
-                   			trendsLimit: 10,
-                    		classifications: [
-                        		[
-                            		'key': 'Browser',
-                            		'value': 'Chrome'
-                        		]
-                    		]
-                      }
-    			}
+//     stage('Generate Cucumber report') {
+//                 steps{
+//             			cucumber buildStatus: 'UNSTABLE',
+//                     		reportTitle: 'BeerCans Cucumber Report',
+//                     		fileIncludePattern: '**/*.json',
+//                    			trendsLimit: 10,
+//                     		classifications: [
+//                         		[
+//                             		'key': 'Browser',
+//                             		'value': 'Chrome'
+//                         		]
+//                     		]
+//                       }
+//     			}
 
   }
 }
