@@ -1,6 +1,13 @@
 pipeline {
   agent any
   stages {
+    stage('Maven Clean'){
+    		steps{
+    			echo 'Project clean stage'
+    			bat label: 'Compilation running', script: '''mvn clean'''
+    	       	}
+    }
+
 	stage('Maven Compile'){
 		steps{
 			echo 'Project compile stage'
@@ -24,10 +31,14 @@ pipeline {
 
     stage('Generate Cucumber report') {
                     steps{
-                			cucumber buildStatus: 'UNSTABLE',
-                        		reportTitle: 'BeerCans Cucumber Report',
-                        		fileIncludePattern: '**/cucumber.json',
-                       			jsonReportDirectory: 'target'
+                			cucumber buildStatus: 'null' failedFeaturesNumber: -1,
+                			failedScenariosNumber: -1,
+                			 failedStepsNumber: -1,
+                			 fileIncludePattern: 'target/cucumber.json',
+                			 pendingStepsNumber: -1,
+                			 skippedStepsNumber: -1,
+                			 sortingMethod: 'ALPHABETICAL',
+                			 undefinedStepsNumber: -1
                           }
     }
 
