@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = {"classpath:features/BeerCans.feature"},
         glue = {"com.sapient.asde.cucumber"},
-        plugin = ("json:target/cucumber-reports/CucumberTestReport.json")
+        plugin = {"json:target/cucumber-reports/CucumberTestReport.json"}
 )
 public class RunCucumberTest {
 }
