@@ -83,7 +83,7 @@
     <dependency>
       <groupId>net.masterthought</groupId>
       <artifactId>cucumber-reporting</artifactId>
-      <version>5.5.4</version>
+      <version>5.5.0</version>
     </dependency>
   </dependencies>
 
@@ -107,7 +107,7 @@
       <plugin>
         <groupId>net.masterthought</groupId>
         <artifactId>maven-cucumber-reporting</artifactId>
-        <version>5.5.4</version>
+        <version>5.5.0</version>
         <executions>
           <execution>
             <id>execution</id>
