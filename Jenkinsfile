@@ -25,7 +25,12 @@ pipeline {
 
     stage('Generate Cucumber report') {
                     steps{
-                			cucumber failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/*.json', pendingStepsNumber: -1, skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
+                			cucumber buildStatus: 'SUCCESS',
+                                failedFeaturesNumber: 0,
+                                skippedStepsNumber: 0,
+                                failedStepsNumber: 0,
+                                fileIncludePattern: '**/*.json',
+                                sortingMethod: 'ALPHABETICAL'
                           }
     }
 
