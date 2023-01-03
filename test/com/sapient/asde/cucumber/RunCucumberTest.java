@@ -10,11 +10,11 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = {"classpath:resources/features/BeerCans.feature"},
         glue = {"com.sapient.asde.cucumber"},
-        plugin = {"pretty",
-                "html:target/cucumber-reports/cucumber.html",
-                "json:target/cucumber-reports/cucumber.json"
-        },
-        monochrome = true
-)
+//        plugin = {"json:target/cucumber.json"},
+        plugin = {
+                "pretty",
+                "json:target/cucumber-report/cucumber.json",
+                "html:target/cucumber-report/cucumber.html"},
+        monochrome = true )
 public class RunCucumberTest {
 }

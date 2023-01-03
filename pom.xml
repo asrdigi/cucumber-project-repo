@@ -139,10 +139,17 @@
     </dependency>
 
 
+
     <dependency>
       <groupId>net.masterthought</groupId>
       <artifactId>cucumber-reporting</artifactId>
       <version>5.5.0</version>
+    </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-junit</artifactId>
+      <version>7.10.1</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 
@@ -167,22 +174,21 @@
       <plugin>
         <groupId>net.masterthought</groupId>
         <artifactId>maven-cucumber-reporting</artifactId>
-        <version>5.6.0</version>
+        <version>3.15.0</version>
         <executions>
           <execution>
-            <id>execution</id>
-            <phase>verify</phase>
+            <id>generate-cucumber-reports</id>
+            <phase>test</phase>
             <goals>
               <goal>generate</goal>
             </goals>
             <configuration>
-              <projectName>cucumber-project</projectName>
-              <skip>false</skip>
-              <outputDirectory>${project.build.directory}/html-reports</outputDirectory>
-              <inputDirectory>${project.build.directory}/cucumber-reports</inputDirectory>
               <jsonFiles>
                 <param>**/*.json</param>
               </jsonFiles>
+              <outputDirectory>${project.build.directory}/cucumber-report</outputDirectory>
+              <inputDirectory>${project.build.directory}</inputDirectory>
+              <checkBuildResult>false</checkBuildResult>
             </configuration>
           </execution>
         </executions>
