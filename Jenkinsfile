@@ -29,13 +29,13 @@ pipeline {
 	}
 
 
-//     stage('SonarQube'){
-// 		steps{
-// 				bat label: '', script: '''mvn sonar:sonar \
-// 				-Dsonar.host.url=http://localhost:9000 \
-// 				-Dsonar.login=2b559fb337742dc5e1f6ed23d89ba2d4be9e6b82'''
-// 			}
-//    		}
+    stage('SonarQube'){
+		steps{
+				bat label: '', script: '''mvn sonar:sonar \
+				-Dsonar.host.url=http://localhost:9000 \
+				-Dsonar.login=squ_8545723f76f699081eb365fd34da843303f5b1cd'''
+			}
+   		}
 
 	stage('Maven Package'){
 		steps{
