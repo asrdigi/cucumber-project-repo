@@ -6,7 +6,7 @@ pipeline {
 		steps{
 			echo 'Project compile stage'
 // 			bat label: 'Compilation running', script: '''mvn compile'''
-            sh "mvn compile"
+            sh 'mvn compile'
 	       	}
 	}
 
@@ -14,7 +14,7 @@ pipeline {
 	   steps {
 			echo 'Project Testing stage'
 // 			bat label: 'Test running', script: '''mvn test'''
-            sh "mvn test"
+            sh 'mvn test'
        		}
    	}
 
@@ -37,7 +37,7 @@ pipeline {
 		steps{
 			echo 'Project packaging stage'
 // 			bat label: 'Project packaging', script: '''mvn package'''
-            sh "mvn package"
+            sh 'mvn package'
 		}
 
 	}
