@@ -23,24 +23,14 @@ pipeline {
 		}
 	}
 
-    stage('Generate Cucumber report') {
-                    steps{
-                			cucumber buildStatus: 'SUCCESS',
-                                failedFeaturesNumber: 0,
-                                skippedStepsNumber: 0,
-                                failedStepsNumber: 0,
-                                fileIncludePattern: '**/*.json',
-                                sortingMethod: 'ALPHABETICAL'
-                          }
-    }
 
-    stage('SonarQube'){
-		steps{
-				bat label: '', script: '''mvn sonar:sonar \
-				-Dsonar.host.url=http://localhost:9000 \
-				-Dsonar.login=2b559fb337742dc5e1f6ed23d89ba2d4be9e6b82'''
-			}
-   		}
+//     stage('SonarQube'){
+// 		steps{
+// 				bat label: '', script: '''mvn sonar:sonar \
+// 				-Dsonar.host.url=http://localhost:9000 \
+// 				-Dsonar.login=2b559fb337742dc5e1f6ed23d89ba2d4be9e6b82'''
+// 			}
+//    		}
 
 	stage('Maven Package'){
 		steps{
@@ -48,6 +38,7 @@ pipeline {
 			bat label: 'Project packaging', script: '''mvn package'''
 		}
 	}
+
 
 //     stage('Generate Cucumber report') {
 //                 steps{
