@@ -70,7 +70,7 @@ pipeline {
 //           }
 
             always{
-                {
+
                             			cucumber buildStatus: 'UNSTABLE',
                                     		reportTitle: 'BeerCans Cucumber Report',
                                     		fileIncludePattern: '**/*.json',
@@ -81,7 +81,7 @@ pipeline {
                                             		'value': 'Chrome'
                                         		]
                                     		]
-                                      }
+                     }
             }
-      }
+
 }
