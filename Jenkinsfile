@@ -65,8 +65,23 @@ pipeline {
   }
 
    post {
-          always {
-              cucumber '**/cucumber.json'
-          }
+//           always {
+//               cucumber '**/cucumber.json'
+//           }
+
+            always{
+                {
+                            			cucumber buildStatus: 'UNSTABLE',
+                                    		reportTitle: 'BeerCans Cucumber Report',
+                                    		fileIncludePattern: '**/*.json',
+                                   			trendsLimit: 10,
+                                    		classifications: [
+                                        		[
+                                            		'key': 'Browser',
+                                            		'value': 'Chrome'
+                                        		]
+                                    		]
+                                      }
+            }
       }
 }
