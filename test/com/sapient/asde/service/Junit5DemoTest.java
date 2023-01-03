@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Tag("smoke test")
 public class Junit5DemoTest {
-    private String[] words={"cali","mali","dani","valli"};
+//    private String[] words={"cali","mali","dani","valli"};
 
     @ParameterizedTest
     @ValueSource(strings={"cali","mali","dani","valli"})
